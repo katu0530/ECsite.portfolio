@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会員登録ページ</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="images/rogo.png" alt="Logo" height="24"
+            class="d-inline-block align-text-top">
+          Logo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex mt-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <form class="row g-3 size" action="" method="post">
+      <div class="col-md-6">
+        <label for="inputId4" class="form-label">ID</label>
+        <input type="text" class="form-control" id="inputId4">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword4">
+      </div>
+      <div class="col-md-12">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">郵便番号</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="〇〇〇-〇〇〇〇">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">住所</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="〇〇市☓☓町0-0-0 〇〇〇〇ハウス000号">
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">電話番号</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+      <div class="col-md-6">
+        <label for="inputage" class="form-label">年齢</label>
+        <input type="number" class="form-control" id="inputage">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">登録</button>
+      </div>
+    </form>
+
+  </main>
+  <footer>
+
+  </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
