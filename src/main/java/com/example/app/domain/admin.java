@@ -3,7 +3,7 @@ package com.example.app.domain;
 import lombok.Data;
 
 @Data
-public class admin {
+public class Admin {
 	
 	private Integer id;
 	
