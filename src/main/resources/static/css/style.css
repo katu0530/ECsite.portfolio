@@ -16,8 +16,8 @@ main {
     justify-content: space-around;
 }
 
-contents {
-
+.disply {
+    display: grid;
 }
 
 
@@ -29,4 +29,8 @@ contents {
 .footer {
     background-color: gray;
     color: white;
+}
+
+.error {
+	color: red;
 }
