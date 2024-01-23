@@ -9,7 +9,7 @@ public class Admin {
 	private Integer id;
 	
 	@NotBlank
-	private Integer loginId;
+	private String loginId;
 	
 	private String loginPass;
 	
