@@ -1,6 +1,7 @@
 package com.example.app.domain;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -11,12 +12,12 @@ public class Item {
 	
 	@NotBlank
 	@Size(max=10)
-	private String item_name;
+	private String itemName;
 	
-	@NotBlank
+	@NotNull
 	private Integer price;
 	
-	private String item_introduction;
+	private String itemIntroduction;
 	
 
 }
