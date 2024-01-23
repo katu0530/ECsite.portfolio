@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.app.domain.Admin;
 import com.example.app.domain.Item;
-import com.example.app.mapper.AdminMapper;
 import com.example.app.mapper.ItemMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -18,7 +16,6 @@ import lombok.RequiredArgsConstructor;
 public class ItemServiceImpl implements ItemService {
 	
 	private final ItemMapper itemMapper;
-	private final AdminMapper adminMapper;
 
 	@Override
 	public List<Item> getItemList() throws Exception {
@@ -45,12 +42,5 @@ public class ItemServiceImpl implements ItemService {
 		itemMapper.delete(id);
 	}
 
-	@Override
-	public List<Admin> getAdminList() throws Exception {
-		return adminMapper.selectAll();
-		
-	}
-	
-	
 
 }

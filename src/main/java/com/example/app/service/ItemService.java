@@ -2,7 +2,6 @@ package com.example.app.service;
 
 import java.util.List;
 
-import com.example.app.domain.Admin;
 import com.example.app.domain.Item;
 
 public interface ItemService {
@@ -12,6 +11,5 @@ public interface ItemService {
 	void addItem(Item item) throws Exception;
 	void editItem(Item item) throws Exception;
 	void deleteItem(Integer id) throws Exception;
-	List<Admin> getAdminList() throws Exception;
 
 }
