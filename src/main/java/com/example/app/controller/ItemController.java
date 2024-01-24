@@ -22,10 +22,10 @@ public class ItemController {
 
 	private final ItemService service;
 
-	@GetMapping("/itemlist")
+	@GetMapping("/itemmanagement")
 	public String list(Model model) throws Exception {
 		model.addAttribute("items", service.getItemList());
-		return "admin/itemlist";
+		return "admin/itemmanagement";
 	}
 
 	@GetMapping("/add")
@@ -46,7 +46,7 @@ public class ItemController {
 		}
 		service.addItem(item);
 		rd.addFlashAttribute("statusMessage", "会員を追加しました。");
-		return "redirect:/admin/itemlist";
+		return "redirect:/admin/itemmanagement";
 
 	}
 
@@ -70,13 +70,14 @@ public class ItemController {
 		item.setId(id);
 		service.editItem(item);
 		rd.addFlashAttribute("statusMessage", "会員情報を更新しました。");
-		return "redirect:/admin/itemlist";
+		return "redirect:/admin/itemmanagement";
 	}
 
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable Integer id, RedirectAttributes rd) throws Exception {
 		service.deleteItem(id);
 		rd.addFlashAttribute("statusMessage", "会員情報を削除しました。");
-		return "redirect:/admin/itemlist";
+		return "redirect:/admin/itemmanagement";
 	}
+
 }
