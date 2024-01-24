@@ -9,8 +9,8 @@
 	<main>
     <th:block th:if="${session.loginId}">
     <h1>管理者ページ</h1>
-		<div class="displey">
-			<div><a th:href="@{/admin/itemlist}">
+		<div class="topcontents">
+			<div><a th:href="@{/admin/itemmanagement}">
 				商品一覧<br> <img src="images/Item1.jpg" class="d-block w-75"
 					alt="..."></a>
 			</div>
@@ -23,7 +23,7 @@
 					alt="...">
 			</div>
 			<div>
-				comingsoon<br> <img src="images/Item4.jpg" class="d-block w-75"
+				ログアウト<br> <img src="images/Item4.jpg" class="d-block w-75"
 					alt="...">
 			</div>
 		</div>
