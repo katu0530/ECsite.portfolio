@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.app.domain.Item;
@@ -40,6 +41,17 @@ public class ItemController {
 			Errors errors,
 			RedirectAttributes rd,
 			Model model) throws Exception {
+
+		MultipartFile upfile = item.getUpfile();
+		if (!upfile.isEmpty()) {
+			// 画像か否か判定する
+			String type = upfile.getContentType();
+			if (!type.startsWith("image/")) {
+				// 画像ではない場合、エラーメッセージを表示
+				errors.rejectValue("upfile", "error.not_image_file");
+			}
+		}
+
 		if (errors.hasErrors()) {
 			model.addAttribute("title", "商品の追加");
 			return "admin/itemadd";

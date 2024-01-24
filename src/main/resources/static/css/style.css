@@ -1,36 +1,41 @@
 @charset "utf-8";
 
-body{
-    width: 90%;
-    max-width: 960px;
-    margin: auto;
+body {
+	width: 90%;
+	max-width: 960px;
+	margin: auto;
 }
 
 main {
-    margin: 70px 15px 0;
+	margin: 70px 15px 0;
 }
 
-
 .displey {
-    display: flex;
-    justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;;
 }
 
 .disply {
-    display: grid;
+	display: grid;
 }
-
 
 .size {
-    margin: 0 70px;
+	margin: 0 70px;
 }
 
-
 .footer {
-    background-color: gray;
-    color: white;
+	background-color: gray;
+	color: white;
 }
 
 .error {
 	color: red;
+}
+
+.itemlist {
+	width: 25%;
+}
+
+.topcontents {
+	display: flex;
 }

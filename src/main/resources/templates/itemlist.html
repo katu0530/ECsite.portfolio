@@ -10,7 +10,7 @@
       <div  class="displey">
         <div class="itemlist" th:each="item : ${items}">
          [[${item.itemName}]]<br>
-          <img src="images/Item1.jpg" class="d-block w-75" alt="...">
+          <img th:src="@{/uploads/{img}(img=${item.photo})}" class="d-block w-75" alt="...">
           <br>[[${item.price}]]円
         </div>
       </div>

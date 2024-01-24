@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.example.app.filter.AuthFilter;
@@ -34,6 +35,13 @@ public class ApplicationConfig implements WebMvcConfigurer {
 	new FilterRegistrationBean<AuthFilter>(new AuthFilter());
 	bean.addUrlPatterns("/admintop/*");
 	return bean;
+	}
+	
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	registry.addResourceHandler("/uploads/**")
+	.addResourceLocations("file:///C:/Users/zd2O15/uploads/");
 	}
 
 }
