@@ -22,13 +22,13 @@ public class AdminController {
 	private final AdminService service;
 	
 	@GetMapping
-	public String ShowHome(Model model) {
+	public String ShowAdminTop(Model model) {
 		model.addAttribute("admin", new Admin());
 		return "admin/admintop";
 	}
 	
 	@PostMapping
-	public String login(@Valid Admin admin,
+	public String Adminlogin(@Valid Admin admin,
 			Errors errors,
 			HttpSession session) throws Exception {
 		if(errors.hasErrors()) {
