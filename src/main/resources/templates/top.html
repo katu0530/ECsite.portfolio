@@ -33,26 +33,16 @@
     <contents>
       <h3>商品一覧</h3>
       <div class="topcontents">
-        <div>
-          商品1<br>
-          <img th:src="@{../images/Item1.jpg}" class="d-block w-75" alt="...">
-        </div>
-        <div>
-          商品2<br>
-          <img th:src="@{../images/Item2.jpg}" class="d-block w-75" alt="...">
-        </div>
-        <div>
-          商品3<br>
-          <img th:src="@{../images/Item3.jpg}" class="d-block w-75" alt="...">
-        </div>
-        <div>
-          商品4<br>
-          <img th:src="@{../images/Item4.jpg}" class="d-block w-75" alt="...">
+       <div class="itemlist" th:each="item : ${items}">
+         [[${item.itemName}]]<br>
+          <img th:src="@{/uploads/{img}(img=${item.photo})}" class="d-block w-75" alt="...">
+          <br>[[${item.price}]]円
         </div>
       </div>
     </contents>
     <a class="" th:href="@{/itemlist}">商品一覧</a>
     <hr>
+    
     <contents>
       <div class="topcontents">
         <div>

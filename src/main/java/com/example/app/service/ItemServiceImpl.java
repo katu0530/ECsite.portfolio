@@ -41,7 +41,7 @@ public class ItemServiceImpl implements ItemService {
 			File dest = new File("C:/Users/zd2O15/uploads/" + photo);
 			upfile.transferTo(dest);
 		}
-
+		
 		itemMapper.insert(item);
 	}
 
@@ -53,6 +53,12 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public void deleteItem(Integer id) throws Exception {
 		itemMapper.delete(id);
+	}
+
+	@Override
+	public List<Item> getItemListPart() throws Exception {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 
 }
