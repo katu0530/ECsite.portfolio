@@ -6,30 +6,34 @@
 		SELECT * FROM items
 	</select>
 
-	<select id="selectById" parameterType="int"  resultType="Item">
+	<select id="selectById" parameterType="int" resultType="Item">
 		SELECT
 		items.id, items.item_name, items.price,
-		items.item_introduction
+		items.item_introduction,
+		items.photo
 		FROM items
 		WHERE id = #{id}
 	</select>
 
 	<insert id="insert" parameterType="Item">
 		INSERT INTO items (item_name,
-		price, item_introduction)
-		VALUES (#{itemName}, #{age}, #{address},
-		#{itemIntroduction})
+		price, item_introduction, photo)
+		VALUES (#{itemName}, #{price},
+		#{itemIntroduction}, #{photo})
 	</insert>
 
 	<update id="update" parameterType="Item">
 		UPDATE items
-		SET item_name = #{itemName}, price = #{price},
-		item_introduction = #{itemIntroduction}
+		SET item_name =
+		#{itemName}, price = #{price},
+		item_introduction = #{itemIntroduction},
+		photo = #{photo}
 		WHERE id = #{id}
 	</update>
 
 	<delete id="delete" parameterType="int">
-		DELETE FROM items WHERE id = #{id}
+		DELETE FROM items WHERE id =
+		#{id}
 	</delete>
 
 

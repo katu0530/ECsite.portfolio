@@ -31,12 +31,11 @@ public class ItemServiceImpl implements ItemService {
 
 	@Override
 	public void addItem(Item item) throws Exception {
-
 		// 画像が選択されている場合の処理
 		MultipartFile upfile = item.getUpfile();
 		if (!upfile.isEmpty()) {
 			String photo = upfile.getOriginalFilename();
-			// news_details テーブルへ格納するための画像名をセット
+			// 格納するための画像名をセット
 			item.setPhoto(photo);
 			// 画像ファイルの保存
 			File dest = new File("C:/Users/zd2O15/uploads/" + photo);

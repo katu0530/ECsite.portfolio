@@ -23,6 +23,7 @@
 					<th scope="col">商品名</th>
 					<th scope="col">価格</th>
 					<th scope="col">商品説明</th>
+				 	<th scope="col">商品画像</th>
 					<th scope="col">操作</th>
 					<th scope="col"></th>
 				</tr>
@@ -33,6 +34,7 @@
 					<td>[[${item.itemName}]]</td>
 					<td>[[${item.price}]]</td>
 					<td>[[${item.itemIntroduction}]]</td>
+					<td>[[${item.photo}]]</td>
 					<td><a class="btn btn-primary"
 						th:href="@{/admin/edit/{id}(id=${item.id})}">編集 </a></td>
 					<td><button class="btn btn-danger delete"
