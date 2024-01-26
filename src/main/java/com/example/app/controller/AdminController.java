@@ -28,7 +28,7 @@ public class AdminController {
 	}
 	
 	@PostMapping
-	public String Adminlogin(@Valid Admin admin,
+	public String AdminLogin(@Valid Admin admin,
 			Errors errors,
 			HttpSession session) throws Exception {
 		if(errors.hasErrors()) {
@@ -46,7 +46,7 @@ public class AdminController {
 	
 	
 	@GetMapping("/logout")
-	public String logout(HttpSession session) {
+	public String Logout(HttpSession session) {
 		session.invalidate();
 		return "admin/logout";
 	}

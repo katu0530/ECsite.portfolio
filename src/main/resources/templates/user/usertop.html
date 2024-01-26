@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{parts/common::page_head('会員画面')}">
+</head>
+<body>
+	<header th:replace="~{parts/common :: page_header}"></header>
+	<main>
+
+
+
+
+		<th:block th:if="${session.userLoginId}">
+			<h1>会員ページ</h1>
+			<div class="topcontents">
+				<div>
+					<a href="">購入履歴<br> <img src="images/Item1.jpg"
+						class="w-75" alt="..."></a>
+				</div>
+				<div>
+					<a th:href="@{/user/userinfo}"> 会員情報の変更<br> <img
+						src="images/Item2.jpg" class="w-75" alt="...">
+					</a>
+				</div>
+				<div>
+					comingsoon<br> <img src="images/Item3.jpg" class="w-75"
+						alt="...">
+				</div>
+				<div>
+					<a th:href="@{user/logout}"> ログアウト<br> <img
+						src="images/Item4.jpg" class="w-75" alt="..."></a>
+				</div>
+			</div>
+		</th:block>
+
+		<th:block th:unless="${session.userLoginId}">
+			<h1>ログイン</h1>
+			<form class="row g-3 size" action="" method="post"
+				th:object="${user}">
+				<div class="col-md-12">
+					<label for="inputId5" class="form-label">ID</label> <span
+						th:errors="*{userLoginId}" class="error"></span> <input
+						type="text" class="form-control" th:field="*{userLoginId}">
+				</div>
+				<div class="col-md-12">
+					<label for="inputPassword5" class="form-label">Password</label> <input
+						type="password" class="form-control" th:field="*{userLoginPass}">
+				</div>
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">ログイン</button>
+				</div>
+			</form>
+
+
+		</th:block>
+	</main>
+	<footer> </footer>
+	<th:block th:replace="~{parts/common::script}"></th:block>
+</body>
+
+</html>

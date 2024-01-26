@@ -81,14 +81,14 @@ public class ItemController {
 		}
 		item.setId(id);
 		service.editItem(item);
-		rd.addFlashAttribute("statusMessage", "会員情報を更新しました。");
+		rd.addFlashAttribute("statusMessage", "商品情報を更新しました。");
 		return "redirect:/admin/itemmanagement";
 	}
 
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable Integer id, RedirectAttributes rd) throws Exception {
 		service.deleteItem(id);
-		rd.addFlashAttribute("statusMessage", "会員情報を削除しました。");
+		rd.addFlashAttribute("statusMessage", "商品情報を削除しました。");
 		return "redirect:/admin/itemmanagement";
 	}
 

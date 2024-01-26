@@ -34,8 +34,11 @@ public class ApplicationConfig implements WebMvcConfigurer {
 	var bean =
 	new FilterRegistrationBean<AuthFilter>(new AuthFilter());
 	bean.addUrlPatterns("/admintop/*");
+	bean.addUrlPatterns("/usertop/*");
 	return bean;
 	}
+	
+	
 	
 	
 	@Override

@@ -7,24 +7,24 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-public class Member {
+public class User {
 	
-	private Integer id;
-	
-	private Integer login_id;
-	
-	private String login_pass;
+	private Integer userId;
 	
 	@NotBlank
-	@Size(max=10)
-	private String name;
+	private String userLoginId;
 	
-	private String address_number;
+	private String userLoginPass;
+	
+	@Size(max=10)
+	private String userName;
+	
+	private String addressNumber;
 	
 	@Size(max=255)
 	private String address;
 	
-	private String phone_number;
+	private String phoneNumber;
 	
 	@Range(min=0, max=120)
 	private Integer age;
