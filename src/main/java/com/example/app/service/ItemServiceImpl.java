@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.example.app.domain.Item;
 import com.example.app.mapper.ItemMapper;
+import com.example.app.mapper.TopMapper;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class ItemServiceImpl implements ItemService {
 
 	private final ItemMapper itemMapper;
+	private final TopMapper topMapper;
 
 	@Override
 	public List<Item> getItemList() throws Exception {
@@ -57,8 +59,7 @@ public class ItemServiceImpl implements ItemService {
 
 	@Override
 	public List<Item> getItemListPart() throws Exception {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return topMapper.selectPart();
 	}
 
 }
