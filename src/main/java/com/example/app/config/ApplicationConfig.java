@@ -1,5 +1,7 @@
 package com.example.app.config;
 
+import java.util.ResourceBundle;
+
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,13 +40,11 @@ public class ApplicationConfig implements WebMvcConfigurer {
 	return bean;
 	}
 	
-	
-	
-	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		ResourceBundle bundle = ResourceBundle.getBundle("application");
 	registry.addResourceHandler("/uploads/**")
-	.addResourceLocations("file:///C:/Users/zd2O15/uploads/");
+	.addResourceLocations(bundle.getString("upload.path"));
 	}
 
 }
