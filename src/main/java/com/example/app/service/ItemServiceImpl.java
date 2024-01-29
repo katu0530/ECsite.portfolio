@@ -2,6 +2,7 @@ package com.example.app.service;
 
 import java.io.File;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,7 +41,8 @@ public class ItemServiceImpl implements ItemService {
 			// 格納するための画像名をセット
 			item.setPhoto(photo);
 			// 画像ファイルの保存
-			File dest = new File("C:/Users/zd2O15/uploads/" + photo);
+			ResourceBundle bundle = ResourceBundle.getBundle("application");
+			File dest = new File(bundle.getString("upload.path") + photo);
 			upfile.transferTo(dest);
 		}
 		

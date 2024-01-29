@@ -3,30 +3,30 @@
 <mapper namespace="com.example.app.mapper.UserMapper">
 
 	<select id="selectByLoginId" resultType="User">
-		SELECT * FROM users WHERE login_id = #{userLoginId}
+		SELECT * FROM users WHERE login_id = #{loginId}
 	</select>
 	
 		<select id="selectByUserId" parameterType="int" resultType="User">
 		SELECT
-		users.id, users.login_id, users.login_pass, users.user_name,
+		users.id, users.login_id, users.login_pass, users.user_name, users.email,
 		users.address_number, users.address, users.phone_number, users.age
 		FROM users
-		WHERE id = #{userId}
+		WHERE id = #{id}
 	</select>
 	
 		<insert id="insert" parameterType="User">
-		INSERT INTO users (login_id, login_pass, user_name, 
+		INSERT INTO users (login_id, login_pass, user_name, email,
 		address_number, address, phone_number, age)
-		VALUES (#{userLoginId}, #{userLoginPass}, #{userName}, #{addressNumber}, 
+		VALUES (#{loginId}, #{loginPass}, #{userName}, #{email}, #{addressNumber}, 
 		#{address}, #{phoneNumber}, #{age})
 	</insert>
 
 	<update id="update" parameterType="User">
 		UPDATE users
-		SET login_id = #{userLoginId}, login_pass = #{userLoginPass}, 
-		user_name = #{userName}, address_number = #{addressNumber},
+		SET login_id = #{loginId}, login_pass = #{loginPass}, 
+		user_name = #{userName}, email = #{email}, address_number = #{addressNumber},
 		address = #{address}, phone_number = #{phoneNumber}, age = #{age}
-		WHERE id = #{userId}
+		WHERE id = #{id}
 	</update>
 	
 </mapper>

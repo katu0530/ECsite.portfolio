@@ -9,12 +9,15 @@ import lombok.Data;
 @Data
 public class User {
 	
-	private Integer userId;
+	private Integer id;
 	
 	@NotBlank
-	private String userLoginId;
+	private String loginId;
 	
-	private String userLoginPass;
+	@NotBlank
+	private String loginPass;
+	
+	private String email;
 	
 	@Size(max=10)
 	private String userName;

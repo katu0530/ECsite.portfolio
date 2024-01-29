@@ -5,20 +5,15 @@
 <body>
 	<header th:replace="~{parts/common :: page_header}"></header>
 	<main>
-
-
-
-
 		<th:block th:if="${session.userLoginId}">
 			<h1>会員ページ</h1>
 			<div class="topcontents">
 				<div>
-					<a href="">購入履歴<br> <img src="images/Item1.jpg"
-						class="w-75" alt="..."></a>
+					購入履歴<br> <img src="images/Item1.jpg" class="w-75" alt="...">
 				</div>
-				<div>
-					<a th:href="@{/user/userinfo}"> 会員情報の変更<br> <img
-						src="images/Item2.jpg" class="w-75" alt="...">
+				<div th:object="${user}">
+					<a th:href="@{/user/edit}"> 会員情報の変更<br>
+						<img src="images/Item2.jpg" class="w-75" alt="...">
 					</a>
 				</div>
 				<div>
@@ -34,22 +29,22 @@
 
 		<th:block th:unless="${session.userLoginId}">
 			<h1>ログイン</h1>
-			<form class="row g-3 size" action="" method="post"
-				th:object="${user}">
+			<form class="row g-3 size" action="" method="post" th:object="${user}">
 				<div class="col-md-12">
 					<label for="inputId5" class="form-label">ID</label> <span
-						th:errors="*{userLoginId}" class="error"></span> <input
-						type="text" class="form-control" th:field="*{userLoginId}">
+						th:errors="*{loginId}" class="error"></span> <input type="text"
+						class="form-control" th:field="*{loginId}">
 				</div>
 				<div class="col-md-12">
 					<label for="inputPassword5" class="form-label">Password</label> <input
-						type="password" class="form-control" th:field="*{userLoginPass}">
+						type="password" class="form-control" th:field="*{loginPass}">
 				</div>
 				<div class="col-12">
 					<button type="submit" class="btn btn-primary">ログイン</button>
 				</div>
 			</form>
-
+		<div style="text-align: center;">
+		<a th:href="@{user/add}"> 会員登録はこちら</a></div>
 
 		</th:block>
 	</main>

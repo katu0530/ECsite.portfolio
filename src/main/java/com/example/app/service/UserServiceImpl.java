@@ -15,6 +15,8 @@ import lombok.RequiredArgsConstructor;
 public class UserServiceImpl implements UserService {
 	
 	private final UserMapper userMapper;
+	
+	private User user;
 
 	@Override
 	public boolean isCorrectUserIdAndPassword(String userLoginId, String userLoginPass) throws Exception {
@@ -24,16 +26,26 @@ public class UserServiceImpl implements UserService {
 			return false;
 		}
 		
-		if(!BCrypt.checkpw(userLoginPass, user.getUserLoginPass())) {
+		if(!BCrypt.checkpw(userLoginPass, user.getLoginPass())) {
 			return false;
 		}
+		
+		// ログインIDとパスワードが正しい場合、ユーザー情報を保存
+		this.user = user;
 		
 		return true;
 	}
 
 	@Override
-	public User getUserById(Integer userId) throws Exception {
-		return userMapper.selectByUserId(userId);
+	public User getUser() {
+		User user = this.user;
+		this.user = null;
+		return user;
+	}
+	
+	@Override
+	public User getUserById(Integer id) throws Exception {
+		return userMapper.selectByUserId(id);
 	}
 
 	@Override
@@ -45,6 +57,7 @@ public class UserServiceImpl implements UserService {
 	public void editUser(User user) throws Exception {
 		userMapper.update(user);
 	}
+
 
 
 }
