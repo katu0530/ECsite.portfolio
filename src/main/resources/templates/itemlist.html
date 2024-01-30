@@ -11,7 +11,9 @@
         <div class="itemlist" th:each="item : ${items}">
          [[${item.itemName}]]<br>
           <img th:src="@{/uploads/{img}(img=${item.photo})}" class="d-block w-75" alt="...">
-          <br>[[${item.price}]]円
+          [[${item.itemIntroduction}]]<br>
+          [[${item.price}]]円
+          <hr>
         </div>
       </div>
       <br>

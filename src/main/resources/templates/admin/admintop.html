@@ -4,8 +4,7 @@
 </head>
 
 <body>
-	<header th:replace="~{parts/common :: page_header}"></header>
-	
+		<header th:replace="~{parts/common :: page_header}"></header>
 	<main>
     <th:block th:if="${session.loginId}">
     <h1>管理者ページ</h1>
